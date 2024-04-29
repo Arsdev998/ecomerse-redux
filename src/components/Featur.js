@@ -6,14 +6,13 @@ import { feateures } from "../data/Data";
 import { BiCart, BiGitCompare, BiHeart, BiSearch } from "react-icons/bi";
 import Modal from "../common/Modal";
 const Featur = () => {
-    const [isModalOpen, setModalOpen] = useState(null)
-    const handleOpen = (productId)=>{
-        alert(productId)
-        setModalOpen(productId)
-    }
-    const handClose = ()=>{
-        setModalOpen(null)
-    }
+  const [isModalOpen, setModalOpen] = useState(null);
+  const handleOpen = (productId) => {
+    setModalOpen(productId);
+  };
+  const handleClose = () => {
+    setModalOpen(null);
+  };
   var settings = {
     dots: false,
     infinite: true,
@@ -36,7 +35,10 @@ const Featur = () => {
                       <button className="text-2xl">
                         <BiCart />
                       </button>
-                      <button className="uppercase whitespace-nowrap" onClick={()=>handleOpen(val.id)}>
+                      <button
+                        className="uppercase whitespace-nowrap"
+                        onClick={() => handleOpen(val.id)}
+                      >
                         {val.btn}
                       </button>
                     </div>
@@ -75,7 +77,11 @@ const Featur = () => {
         </Slider>
       </div>
       {/* add modal button disini */}
-      <Modal isModalOpen={isModalOpen !== null}/>
+      <Modal
+        isModalOpen={isModalOpen !== null}
+        data={feateures.find((feature) => feature.id === isModalOpen)}
+        handleClose={handleClose}
+      />
     </div>
   );
 };
