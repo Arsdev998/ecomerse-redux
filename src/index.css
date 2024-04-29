@@ -1,13 +1,65 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.items_count{
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.items_count span {
+    font-size: small;
+}
+.banner-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.banner-items h2 {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 16px;
+    letter-spacing: 3px;
+}
+.banner-items h1 {
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 66px;
+}
+.banner-items button {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-width: 0;
+    border-radius: 0;
+    background-color: #f05a66;
+}
+.slick-next {
+    right: 0 !important;
+}
+.slick-prev {
+    left: 0 !important;
+    z-index: 1;
+}
+.slick-next, .slick-prev{
+    color:  white !important;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+.bnd button{
+    color: #f05a66;
+    background-color: white;
+    transition: all ease-in-out 0.5s;
 }
