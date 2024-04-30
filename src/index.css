@@ -38,7 +38,7 @@
     text-transform: uppercase;
     line-height: 66px;
 }
-.banner-items button, .size-btn button {
+.banner-items button, .size-btn button, .add-to-cart button {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;

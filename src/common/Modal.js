@@ -1,7 +1,11 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { PiMinus, PiPlus } from "react-icons/pi";
 
 const Modal = ({ isModalOpen, data, handleClose }) => {
+  const addItemToCart = (product)=>{
+    alert(product)
+  }
   return (
     <div className="">
       {isModalOpen && (
@@ -9,7 +13,7 @@ const Modal = ({ isModalOpen, data, handleClose }) => {
           <div className="modal-content w-2/3 relative bg-white overflow-auto">
             <span
               onClick={() => handleClose()}
-              className="hover:text-red-600 cursor-pointer"
+              className="absolute top-0 right-0 p-4 hover:text-red-600 cursor-pointer"
             >
               <FaTimes />
             </span>
@@ -35,10 +39,35 @@ const Modal = ({ isModalOpen, data, handleClose }) => {
                 </div>
                 <p className="text-red-600">${data.price}</p>
                 <p className="mt-2">${data.description}</p>
-                <div className="">
+                <div className="flex items-center ">
                   <p className="font-semibold">Size: </p>
-                  <div className="size-btn mt-4 mb-4">
-                    <button className="mt-4 btn  ml-2 btn pt-3 pb-3 pl-6 pr-6">Small</button>
+                  <div className=" size-btn mt-4 mb-4">
+                    <button className=" btn  ml-2 btn pt-1 pb-1 pl-3 pr-3 text-white">
+                      Small
+                    </button>
+                    <button className=" btn  ml-2 btn pt-1 pb-1 pl-3 pr-3 text-white">
+                      Large
+                    </button>
+                    <button className=" btn  ml-2 btn pt-1 pb-1 pl-3 pr-3 text-white">
+                      Extra Large
+                    </button>
+                  </div>
+                </div>
+                <p className="text-green-700">In Stock 300 Items</p>
+                <div className="">
+                  <div className="flex items-center">
+                    <div className="flex mr-3">
+                      <button className="border mt-4 pb-3 pt-3 pr-6 pl-6">
+                        <PiMinus/>
+                      </button>
+                      <span className="border mt-4 pb-3 pt-3 pr-6 pl-6 count">00</span>
+                      <button className="border mt-4 pb-3 pt-3 pr-6 pl-6">
+                        <PiPlus/>
+                      </button>
+                    </div>
+                    <div className="add-to-cart mr-3 mt-3">
+                      <button className="pt-3 pb-3 pl-6 pr-6 text-white" onClick={()=>addItemToCart(data)}>Add To Cart</button>
+                    </div>
                   </div>
                 </div>
               </div>
