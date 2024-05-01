@@ -15,6 +15,13 @@ import f6 from '../images/light_black_face.jpg'
 import f7 from '../images/red.jpg'
 import f8 from '../images/black_face.jpg'
 import f9 from '../images/black_side.jpg'
+// blog img
+import b1 from "../images/10-home_default.jpg"
+import b2 from "../images/11-home_default.jpg"
+import b3 from '../images/12-home_default.jpg'
+import b4 from '../images/13-home_default.jpg'
+import b5 from '../images/kurti.jpg'
+import b6 from '../images/14-home_default.jpg'
 export const navbar = [
   {
     id: 1,
@@ -223,49 +230,49 @@ export const reviews = [
 export const blogs = [
   {
     id: 1,
-    img: "../images/10-home_default.jpg",
-    tag: "8 May",
-    title: "Shop",
-    short_description: "Lorem ipsum dolor",
+    img: b1,
+    tag: "26 April",
+    title: "Style",
+    short_description: "Up your style",
     read_more: "Read More",
   },
   {
     id: 2,
-    img: "../images/11-home_default.jpg",
-    tag: "8 May",
-    title: "Shop",
-    short_description: "Lorem ipsum dolor",
+    img: b2,
+    tag: "30 May",
+    title: "Beautiful",
+    short_description: "Beautiful style",
     read_more: "Read More",
   },
   {
     id: 3,
-    img: "../images/12-home_default.jpg",
-    tag: "8 May",
-    title: "Shop",
-    short_description: "Lorem ipsum dolor",
+    img: b3,
+    tag: "19 April",
+    title: "Enjoy",
+    short_description: "Enjoy your life in style",
     read_more: "Read More",
   },
   {
     id: 4,
-    img: "../images/13-home_default.jpg",
-    tag: "8 May",
-    title: "Shop",
+    img: b4,
+    tag: "20 May",
+    title: "Meditation",
     short_description: "Lorem ipsum dolor",
     read_more: "Read More",
   },
   {
     id: 5,
-    img: "../images/kurti.jpg",
+    img: b5,
     tag: "8 May",
-    title: "Shop",
+    title: "Dress",
     short_description: "Lorem ipsum dolor",
     read_more: "Read More",
   },
   {
     id: 6,
-    img: "../images/14-home_default.jpg",
-    tag: "8 May",
-    title: "Shop",
+    img: b6,
+    tag: "2 April",
+    title: "Shine",
     short_description: "Lorem ipsum dolor",
     read_more: "Read More",
   },

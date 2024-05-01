@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { PiMinus, PiPlus } from "react-icons/pi";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/cartSlice";
 
 const Modal = ({ isModalOpen, data, handleClose }) => {
-  const addItemToCart = (product)=>{
-    alert(product)
-  }
+  const { qty, setQty } = useState(1);
+  const dispatch = useDispatch()
+  const addItemToCart = (product) => {
+    // console.log(product);
+    let TotalPrice = qty * product.Price;
+
+    const tempProuct = {
+      ...product,
+      quantity: qty,
+      TotalPrice,
+    };
+
+    dispatch(addToCart(tempProuct))
+
+  };
   return (
     <div className="">
       {isModalOpen && (
@@ -58,15 +72,22 @@ const Modal = ({ isModalOpen, data, handleClose }) => {
                   <div className="flex items-center">
                     <div className="flex mr-3">
                       <button className="border mt-4 pb-3 pt-3 pr-6 pl-6">
-                        <PiMinus/>
+                        <PiMinus />
                       </button>
-                      <span className="border mt-4 pb-3 pt-3 pr-6 pl-6 count">00</span>
+                      <span className="border mt-4 pb-3 pt-3 pr-6 pl-6 count">
+                        00
+                      </span>
                       <button className="border mt-4 pb-3 pt-3 pr-6 pl-6">
-                        <PiPlus/>
+                        <PiPlus />
                       </button>
                     </div>
                     <div className="add-to-cart mr-3 mt-3">
-                      <button className="pt-3 pb-3 pl-6 pr-6 text-white" onClick={()=>addItemToCart(data)}>Add To Cart</button>
+                      <button
+                        className="pt-3 pb-3 pl-6 pr-6 text-white"
+                        onClick={() => addItemToCart(data)}
+                      >
+                        Add To Cart
+                      </button>
                     </div>
                   </div>
                 </div>
